@@ -12,6 +12,15 @@ const Header = () => {
       }) 
     })
   },[])
+
+  function logout() {
+    fetch('http://localhost:4000/logout' ,{
+      credentials:'include',
+      method : 'POST',
+    });
+    setUsername(null);
+  }
+
   return (
     <header>
         <Link to={"/"} className="logo">MyBlog</Link>
@@ -19,7 +28,7 @@ const Header = () => {
             {username && (
               <>
                 <Link to={"/create"}>Create New Post</Link>
-                <a>Logout</a>
+                <a onClick={logout}>Logout</a>
               </>
             )}
             {!username && (
