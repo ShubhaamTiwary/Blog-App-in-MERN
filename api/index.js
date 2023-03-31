@@ -4,7 +4,7 @@ const cors=require('cors');
 const User = require('./models/user');
 const {mongoose } = require('mongoose');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 const cookieParser=require('cookie-parser');
 
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
@@ -37,7 +37,10 @@ app.post('/login', async(req,res) =>{
     if(passOk){
       jwt.sign({username ,id:userDoc._id},secret,{},(err,token)=>{
         if(err) throw err;
-        res.cookie('token',token).json("ok");
+        res.cookie('token',token).json({
+          id:userDoc._id,
+          username,
+        });
       });
     }
     else{
@@ -52,7 +55,7 @@ app.get('/profile' , (req,res) =>{
     res.json(info);
   })
   res.json(req.cookies);
-})
+});
 
 app.post('/logout' ,  (req,res) =>{
   res.cookie('token','').json('ok');
