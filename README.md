@@ -1,4 +1,7 @@
-# Blog-App-in-MERN
+<h1 align="center">
+Blog-App-in-MERN
+</h1>
+
 # Project Title
 
 This is a Blog website , where users can register / login and create post on the website . The author of the post can also edit his post and can see other authors content and posts.
@@ -8,6 +11,7 @@ This website id developed in MERN stack.
 ## Tech Stack
 
 **Client:** React, MaterialUI
+<br>
 **Server:** Node.js , Express.Js and MongoDB
 
 
@@ -23,7 +27,7 @@ This website id developed in MERN stack.
 - SignIn or register as an Author
 - Add Blog to the Website
 - See Blogs creted by other authors 
-- A author can edit his own post.
+- Edit your own post as an author
 
 
 ## 🔗 Links
