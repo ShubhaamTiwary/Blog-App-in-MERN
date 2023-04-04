@@ -13,7 +13,8 @@ This website id developed in MERN stack.
 
 ## Demo
 
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/89575981/224621120-85b4985a-a5a4-427f-8893-b121fa1b81ac.gif)
+
+![Papa](https://user-images.githubusercontent.com/89575981/229932168-2fd3e680-39be-4ac5-9c59-a1bc654ab9ad.gif)
 
 
 ![](file:///C:\Users\shubh\Downloads\Papa.gif)
