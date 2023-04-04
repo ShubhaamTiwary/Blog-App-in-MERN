@@ -5,7 +5,7 @@ Blog-App-in-MERN
 # Project Title
 
 This is a Blog website , where users can register / login and create post on the website . The author of the post can also edit his post and can see other authors content and posts.
-This website id developed in MERN stack.
+This website is developed in MERN stack.
 
 
 ## Tech Stack
