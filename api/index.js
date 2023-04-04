@@ -21,6 +21,9 @@ app.use(cookieParser());
 
 mongoose.connect('mongodb+srv://shubhaamtiwary:HfWBicaV6Z3xdLw7@cluster0.js9dcme.mongodb.net/?retryWrites=true&w=majority');
 
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
+
 app.post('/register', async (req,res) =>{
     const {username,password} = req.body;
     try{
@@ -72,15 +75,25 @@ app.post('/post', uploadMiddleware.single('file') , async (req,res)=>{
   const newPath=path+'.'+ext;
   fs.renameSync(path,newPath);
 
-  const{title,summary,content}=req.body;
-  const postDoc = await Post.create({
-    title,
-    summary,
-    content,
-    cover:newPath,
-  })
-  res.json(postDoc);
-  
+  const {token} = req.cookies;
+  jwt.verify(token,secret,{},async (err,info)=>{
+    if(err) throw err;
+    const{title,summary,content}=req.body;
+    const postDoc = await Post.create({
+      title,
+      summary,
+      content,
+      cover:newPath,
+      author: info.id,
+    })
+    res.json(postDoc);
+  });
+});
+
+
+app.get('/post',async (req,res)=>{
+  const posts = await Post.find().populate('author',['username']).sort({createdAt:-1}).limit(20);
+  res.json(posts);
 });
 
 

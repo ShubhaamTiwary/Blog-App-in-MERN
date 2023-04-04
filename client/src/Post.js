@@ -1,19 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {formatISO9075} from "date-fns";
 
-export const Post = () => {
+export const Post = ({_id,title,summary,cover,content,createdAt,author}) => {
   return (
     <div className="post">
         <div className="image">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1280px-Image_created_with_a_mobile_phone.png" alt="">
+          <img src={'http://localhost:4000/' + cover } alt="">
           </img>
         </div>
         <div className="texts">
-          <h2>kasbchjbj zclivz zj zjkbvbjkz mz  vhjbhjazjv jabuisvask vjsabuifnjia </h2>
+          <h2>{title}</h2>
           <p className="info">
-            <a className="author">Shubhaam Tiwary</a>
-            <time>2023-03-28  15:00</time>
-          </p>
-          <p className="summary">jhscac gjasuguyasbubvyubaydyubyusagu h A UYUGDYUYUBSAB UQUYABJB</p>
+            <a className="author">{author.username}</a>
+            <time>{formatISO9075(new Date(createdAt))}</time>
+          </p> 
+          <p className="summary">{summary}</p>
         </div>
     </div>
   )
