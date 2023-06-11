@@ -71,7 +71,7 @@ npm start
 
 
 ## License
-[MIT License](https://github.com/ShubhaamTiwary/AI-Image-Generation/blob/master/LICENSE)
+[MIT License](https://github.com/ShubhaamTiwary/Blog-App-in-MERN/blob/master/LICENSE)
 
 ## Demo
 
